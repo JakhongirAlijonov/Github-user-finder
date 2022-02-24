@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./download.png" type="image/x-icon">
+    <title>Github users</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header container">
+        <a href="#" class="logo">
+            <img src="./download.png" width="75 " height="75" alt="site logo"> Github users
+        </a>
+        <ul class="header-nav">
+            <li class="header-item"><a href="#" class="header-link">Home</a></li>
+            <li class="header-item"><a href="#" class="header-link">About</a></li>
+            <li class="header-item"><a href="#" class="header-link">Contacts</a></li>
+        </ul>
+    </header>
+    <section class="find-user container">
+
+        <div class="main">
+            <form action="" id="form">
+                <input type="text" id="input" placeholder="Enter username">
+                <button id="searchBtn">Search</button>
+            </form>
+            <div class="user-infos">
+                <div class="img">
+                    <img src="./download.png" alt="user image" width="250" id="user-img">
+                </div>
+                <div class="user">
+                    <h1 class="user-name">
+                        Name: <span id="name"></span>
+                    </h1>
+                    <div class="bios">
+                        <p> Bio: <span id="bio"></span></p>
+                    </div>
+                    <div class="follows">
+                        <p class="follower">Followers : <span id="follower"></span></p>
+
+                        <p class="follow">Following : <span id="follow"></span> </p>
+                    </div>
+                    <p class="loc">Location : <span id="loc"></span></p>
+                    <p class="repos">Public repositories : <span id="repos"></span></p>
+                    <p class="created">Account created : <span id="create"></span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="app.js"></script>
+</body>
+
+</html>
