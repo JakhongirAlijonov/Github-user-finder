@@ -6,6 +6,12 @@ body {
     font-size: 18px;
     font-weight: 400;
     padding: 0;
+    text-align: center;
+}
+
+body.active {
+    background-color: #202C36;
+    color: #fff;
 }
 
 * {
@@ -26,6 +32,15 @@ body {
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+    transition: 0.3s ease;
+}
+
+.site-header.active {
+    background-color: #2B3844;
+}
+
+.site-header.active a {
+    color: #fff;
 }
 
 .logo {
@@ -45,6 +60,7 @@ body {
 
 .logo img {
     margin-right: 10px;
+    border-radius: 50%;
 }
 
 .header-nav {
@@ -94,12 +110,21 @@ body {
     margin-bottom: 50px;
 }
 
+#night_mode {
+    cursor: pointer;
+}
+
 #input,
 #searchBtn {
     padding: 16px;
     border: none;
     border-radius: 5px;
     background-color: #b1b1b9b9;
+}
+
+body.active #input,
+#searchBtn {
+    background-color: #fff;
 }
 
 .img {
@@ -142,4 +167,8 @@ body {
     .img {
         margin-right: 0;
     }
+}
+
+#go {
+    color: #666;
 }

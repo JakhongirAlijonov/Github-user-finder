@@ -11,6 +11,8 @@ const repos = document.getElementById('repos')
 const create = document.getElementById('create')
 const main = document.querySelector('.main')
 const loader = document.querySelector('#loader')
+const go = document.getElementById('go')
+const night = document.getElementById('night_mode')
 form.addEventListener('submit', (e) => {
     e.preventDefault()
     let value = input.value
@@ -35,9 +37,12 @@ form.addEventListener('submit', (e) => {
             const data = await req.json()
             getDatas(data)
             console.log(data);
+            go.setAttribute('href', `${data.html_url}`)
 
         } catch (err) {
             console.log(err.message)
+            document.body.innerHTML = `<h1> Failed to connect </h1>`
+            loader.classList.add('hidden')
         }
 
     }
@@ -61,4 +66,11 @@ function getDatas(datas) {
     locations.innerHTML = datas.location
     repos.innerHTML = datas.public_repos
     create.innerHTML = datas.created_at
+
 }
+
+
+night.addEventListener('click', () => {
+    document.body.classList.toggle('active')
+    document.querySelector('.site-header').classList.toggle('active')
+})
