@@ -1,6 +1,7 @@
 const form = document.getElementById('form')
 const input = document.getElementById('input')
 let img = document.getElementById('user-img')
+const login = document.getElementById('login')
 const names = document.getElementById('name')
 const bio = document.getElementById('bio')
 const follower = document.getElementById('follower')
@@ -8,20 +9,27 @@ const follow = document.getElementById('follow')
 const locations = document.getElementById('loc')
 const repos = document.getElementById('repos')
 const create = document.getElementById('create')
-
-form.addEventListener('click', (e) => {
+const main = document.querySelector('.main')
+const loader = document.querySelector('#loader')
+form.addEventListener('submit', (e) => {
     e.preventDefault()
     let value = input.value
     const api = `https://api.github.com/users/${value}`
 
 
     async function requestApi(url) {
+        loader.classList.remove('hidden')
+        main.classList.add('hidden')
         try {
             const req = await fetch(url)
 
             if (!req.ok) {
 
-
+                if (!(req.status == 200)) {
+                    alert(`Check usename`)
+                    loader.classList.add('hidden')
+                    main.classList.remove('hidden')
+                }
                 throw new Error('Nimadir xato ketdi')
             }
             const data = await req.json()
@@ -39,9 +47,13 @@ form.addEventListener('click', (e) => {
 
 
 function getDatas(datas) {
+    loader.classList.add('hidden')
+    main.classList.remove('hidden')
+
 
     img.setAttribute('src', `${datas.avatar_url}`)
-    names.innerHTML = datas.login
+    login.innerHTML = datas.login
+    names.innerHTML = datas.name
 
     bio.innerHTML = datas.bio
     follower.innerHTML = datas.followers

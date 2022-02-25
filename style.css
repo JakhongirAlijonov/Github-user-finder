@@ -123,3 +123,23 @@ body {
 .follower {
     margin-right: 50px;
 }
+
+@media (max-width:450px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .site-header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .header-nav {
+        margin-top: 25px;
+    }
+    .user-infos {
+        flex-wrap: wrap;
+    }
+    .img {
+        margin-right: 0;
+    }
+}
